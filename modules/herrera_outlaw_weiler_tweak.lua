@@ -1,34 +1,34 @@
-HerreraOutlawGTSHandlingTweaksE1 = { 
-    description = "Herrea Outlaw GTS Handling Tweaks"
+HerreraOutlawWeilerHandlingTweaksE1 = { 
+    description = "Herrea Outlaw Weiler Handling Tweaks"
 }
 
 local VehicleBaseFunctions = require("modules/functions/main_functions")
 
-function HerreraOutlawGTSHandlingTweaksE1.new(FinalDriveMultToSet, MaxTorqueMult, BrakingTorqueMult, BrakingFrictionFactorMult, MaxWheelTurnMult, TurnMaxAddMult, TurnMaxSubMult)
+function HerreraOutlawWeilerHandlingTweaksE1.new(FinalDriveMultToSet, MaxTorqueMult, BrakingTorqueMult, BrakingFrictionFactorMult, MaxWheelTurnMult, TurnMaxAddMult, TurnMaxSubMult)
 	
 	MinRPM=800
 	MaxRPM=7100
-	MaxTorque=760*MaxTorqueMult
+	MaxTorque=900*MaxTorqueMult
 	ResistanceTorque=70
 	WheelsResistanceRatio=15
 	
-	BrakingFrictionFactor=1.50*BrakingFrictionFactorMult
-	MaxBrakingTorqueFront=2400*BrakingTorqueMult
-	MaxBrakingTorqueBack=3400*BrakingTorqueMult
+	BrakingFrictionFactor=1.60*BrakingFrictionFactorMult
+	MaxBrakingTorqueFront=2600*BrakingTorqueMult
+	MaxBrakingTorqueBack=3700*BrakingTorqueMult
 	
 	airResistanceFactor = 1.4
-	TurningRollFactor = 1.0
-	TotalMass = 1895
+	TurningRollFactor = 0.85
+	TotalMass = 2200
 	
 	MaxWheelTurnDeg = 40*MaxWheelTurnMult
 	TurnMaxAddPerSecond = 85*TurnMaxAddMult
 	TurnMaxSubPerSecond = 125*TurnMaxSubMult
 	
-	FrontFrictionLateralMult=0.99
-	FrontFricitionLongitudinal=0.99
+	FrontFrictionLateralMult=1.05
+	FrontFricitionLongitudinal=1.02
 	
-	RearFrictionLateralMult=0.99
-	RearFricitionLongitudinal=0.99
+	RearFrictionLateralMult=1.05
+	RearFricitionLongitudinal=1.02
 	
 	FrontVisualSuspensionDroop = 0.05
 	FrontWheelsVerticalOffset = 0.0
@@ -68,30 +68,30 @@ function HerreraOutlawGTSHandlingTweaksE1.new(FinalDriveMultToSet, MaxTorqueMult
 	
 	gearsTorqueMult[4] = 0.34
 	gearsMinSpeed[4] = 31*FinalDriveMultToSet
-	gearsMaxSpeed[4] = 38*FinalDriveMultToSet
+	gearsMaxSpeed[4] = 40*FinalDriveMultToSet
 	gearsMinRPM[4] = 3500
 	gearsMaxRPM[4] = 6400
 	
 	gearsTorqueMult[5] = 0.30
-	gearsMinSpeed[5] = 37*FinalDriveMultToSet
-	gearsMaxSpeed[5] = 44*FinalDriveMultToSet
+	gearsMinSpeed[5] = 39*FinalDriveMultToSet
+	gearsMaxSpeed[5] = 46*FinalDriveMultToSet
 	gearsMinRPM[5] = 3700
 	gearsMaxRPM[5] = 6200
 	
 	gearsTorqueMult[6] = 0.27
-	gearsMinSpeed[6] = 43*FinalDriveMultToSet
-	gearsMaxSpeed[6] = 50*FinalDriveMultToSet
+	gearsMinSpeed[6] = 45*FinalDriveMultToSet
+	gearsMaxSpeed[6] = 52*FinalDriveMultToSet
 	gearsMinRPM[6] = 3900
 	gearsMaxRPM[6] = 6000
 	
 	gearsTorqueMult[7] = 0.25
-	gearsMinSpeed[7] = 48*FinalDriveMultToSet
-	gearsMaxSpeed[7] = 54*FinalDriveMultToSet
+	gearsMinSpeed[7] = 51*FinalDriveMultToSet
+	gearsMaxSpeed[7] = 60*FinalDriveMultToSet
 	gearsMinRPM[7] = 4000
 	gearsMaxRPM[7] = 7100
 	
 	--I highly suggest not adding _player etc under them, so that you can more simply use them and make it faster for cloning :)
-	vehicleName = "sport1_herrera_outlaw"
+	vehicleName = "sport1_herrera_outlaw_heist"
 	
 	--Don't change this unless you want to change the way the start of the name is written, this is for your own ease of use :) 
 	fullVehicleName = "Vehicle.v_"..vehicleName
@@ -137,10 +137,10 @@ function HerreraOutlawGTSHandlingTweaksE1.new(FinalDriveMultToSet, MaxTorqueMult
 	
 	--Setting the data to specified vehicles
 	VehicleBaseFunctions.setVehicleSettings(fullVehicleName, VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
-	VehicleBaseFunctions.setVehicleSettings("Vehicle.cs_savable_herrera_outlaw", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
-	VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
-	VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw_player", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
-	VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw_quest", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
+	VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw_heist_player", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
+	--VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
+	--VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw_player", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
+	--VehicleBaseFunctions.setVehicleSettings("Vehicle.v_sport1_herrera_outlaw_quest", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
 	--VehicleBaseFunctions.setVehicleSettings("Vehicle.q000_nomad_v_sport1_herrera_outlaw_quest", VehicleEngineData, VehicleDriveModelData, VehicleDataPackage, VehicleWheelDimensionsSetup, false)
 
 	
@@ -194,4 +194,4 @@ function HerreraOutlawGTSHandlingTweaksE1.new(FinalDriveMultToSet, MaxTorqueMult
 
 end
 
-return HerreraOutlawGTSHandlingTweaksE1
+return HerreraOutlawWeilerHandlingTweaksE1

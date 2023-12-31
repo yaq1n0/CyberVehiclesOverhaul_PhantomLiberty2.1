@@ -7,7 +7,9 @@ registerForEvent("onInit", function()
 	
 	--Gear Min/Max speed multiplier for all gears
 	--(Suggested maximum value: 1.25)
-	local GearSpeedMult = 1.0
+	--(Default value: 1.0)
+	--(Suggested value when using accurate speedometer mod: 2.0)
+	local GearSpeedMult = 2.0
 	
 	--Engine Power multiplier 
 	--(Suggested maximum value: 1.25)
